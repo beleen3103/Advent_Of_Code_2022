@@ -18,8 +18,6 @@ int resolver(const char& opponent, const char& me) {
 	int res = 0;
 
 	if ((int)me - (int)opponent == 23) res += 3; //draw
-	//else if ((int)me - (int)opponent == (21 || 24)) res += 6; //win
-	//if ((me == 'X' && opponent == 'A') || (me == 'Y' && opponent == 'B') || (me == 'Z' && opponent == 'C')) res += 3; //draw
 	else if ((me == 'X' && opponent == 'C') || (me == 'Y' && opponent == 'A') || (me == 'Z' && opponent == 'B')) res += 6; //win
 
 	res += ((int)me - 87);
