@@ -17,7 +17,7 @@ int resolver(const string& rucksack1, const string& rucksack2, const string& ruc
 
 	while (i < rucksack1.length() && !found) { //buscamos la letra que coincida
 		while (j < rucksack2.length() && !found) {
-			if (rucksack1[i] == rucksack2[j]) { //cuando encontremos una que coincida en los dos primeros, miramos si también lo hace en el tercero
+			if (rucksack1[i] == rucksack2[j]) { //cuando encontremos una que coincida en los dos primeros, miramos si tambiÃ©n lo hace en el tercero
 				while (k < rucksack3.length() && !found) {
 					if (rucksack1[i] == rucksack3[k]) found = true;
 					k++;
@@ -48,5 +48,6 @@ int main() {
 	}
 
 	cout << res;
+	archivo.close();
 	return 0;
 }
