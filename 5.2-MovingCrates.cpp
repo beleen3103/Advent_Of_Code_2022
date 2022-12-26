@@ -21,7 +21,6 @@ void resolver(vector<vector<char> >& matrix, string& line) {
 	i = 0;
 	while (i < stoi(data[1])) { //guardamos todos los elementos a mover en una variable auxiliar
 		group.push_back(matrix[stoi(data[3]) - 1].back());
-		//matrix[stoi(data[5]) - 1].push_back(matrix[stoi(data[3]) - 1].back()); //metemos el ultimo dato del origen en el destino
 		matrix[stoi(data[3]) - 1].pop_back(); //quitamos el elemento del origen
 		i++;
 	}
@@ -56,20 +55,14 @@ int main() {
 	}
 	getline(archivo, line); //quitamos la linea vacía entre la matriz y los comandos
 
-	int i = 0;
-	while (i < columns) { //como trabajamos con vectores, revertimos el orden de todos para trabajar siempre con la "parte de atrás" (las letras superiores de cada columna)
-		reverse(matrix[i].begin(), matrix[i].end());
-		i++;
-	}
+
+	for (int i = 0; i < columns; i++) reverse(matrix[i].begin(), matrix[i].end());//como trabajamos con vectores, revertimos el orden de todos para trabajar siempre con la "parte de atrás" (las letras superiores de cada columna)
 
 	//resolvemos cada comando
 	while (getline(archivo, line)) resolver(matrix, line);
 
-	i = 0;
-	while (i < columns) {
-		cout << matrix[i].back();
-		i++;
-	}
+	for (int i = 0; i < columns; i++) cout << matrix[i].back();
+	
 
 	archivo.close();
 	return 0;
