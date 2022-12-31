@@ -10,7 +10,7 @@ long int resolver() {
 	ifstream archivo("data.txt");
 	string line;	
 	string data[3];
-	int i, it = 1, X = 1, res = 0, finInst = 0, suma =0; //suma es la operación a realizar al terminar una ejecucion. finInst es las iteraciones que quedan hasta completar la ejecucion actual
+	int i, it = 1, X = 1, res = 0, finInst = 0, suma =0; //suma es la operaciÃ³n a realizar al terminar una ejecucion. finInst es las iteraciones que quedan hasta completar la ejecucion actual
 	bool fin = false;
 
 	while (finInst != 0 || getline(archivo, line)) { //primero comprobamos que la ejecucion anterior haya terminado, y despues si quedan instrucciones por meter
@@ -34,7 +34,7 @@ long int resolver() {
 		}
 		
 		if(finInst > 0) finInst--;
-		if(finInst == 0) X += suma; // cuando se completa una instrucción, se hace la operación que corresponda
+		if(finInst == 0) X += suma; // cuando se completa una instrucciÃ³n, se hace la operaciÃ³n que corresponda
 		it++;
 	}
 	
